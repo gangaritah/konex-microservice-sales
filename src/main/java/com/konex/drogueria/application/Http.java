@@ -15,7 +15,6 @@ public class Http {
       HttpURLConnection connection = (HttpURLConnection) url.openConnection();
       connection.setRequestMethod("GET");
       int responseCode = connection.getResponseCode();
-      System.out.println("Código de respuesta: " + responseCode);
       BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
       String inputLine;
       StringBuffer response = new StringBuffer();
@@ -23,8 +22,6 @@ public class Http {
         response.append(inputLine);
       }
       reader.close();
-      System.out.println("Respuesta del servidor:");
-      System.out.println(response);
       connection.disconnect();
       return Integer.parseInt(response.toString());
     } catch (IOException e) {
@@ -39,7 +36,6 @@ public class Http {
       HttpURLConnection connection = (HttpURLConnection) url.openConnection();
       connection.setRequestMethod("GET");
       int responseCode = connection.getResponseCode();
-      System.out.println("Código de respuesta: " + responseCode);
       BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
       String inputLine;
       StringBuffer response = new StringBuffer();
@@ -47,8 +43,6 @@ public class Http {
         response.append(inputLine);
       }
       reader.close();
-      System.out.println("Respuesta del servidor:");
-      System.out.println(response);
       connection.disconnect();
       return response.toString();
     } catch (IOException e) {
