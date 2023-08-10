@@ -1,6 +1,6 @@
-package com.konex.drogueria.service;
+package com.konex.drogueria.application;
 
-import com.konex.drogueria.entity.Medicine;
+import com.konex.drogueria.domain.model.Medicine;
 import org.springframework.http.ResponseEntity;
 
 public interface MedicineService {

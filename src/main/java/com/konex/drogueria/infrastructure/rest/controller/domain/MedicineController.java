@@ -1,7 +1,7 @@
-package com.konex.drogueria.controller;
+package com.konex.drogueria.infrastructure.rest.controller.domain;
 
-import com.konex.drogueria.entity.Medicine;
-import com.konex.drogueria.service.MedicineService;
+import com.konex.drogueria.domain.model.Medicine;
+import com.konex.drogueria.application.MedicineService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
