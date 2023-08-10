@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import com.konex.drogueria.service.Http;
+
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -32,6 +34,12 @@ public class MedicineServiceImpl implements MedicineService{
   @Override
   public ResponseEntity<?> saveMedication(Medicine medicine) {
     try{
+      Integer valueUnit = this.http.getPrice(medicine.getIdMedicine());
+      String name = this.http.getName(medicine.getIdMedicine());
+      medicine.setTotalValue(valueUnit*medicine.getAmount());
+      medicine.setName(name);
+      medicine.setUnitValue(valueUnit);
+      medicine.setSaleDate(new Date());
       out.print(medicine);
       Medicine medicineSaved = medicineRepository.save(medicine);
       return new ResponseEntity<>(HttpStatus.OK);
