@@ -14,7 +14,7 @@ import static java.lang.System.out;
 
 @Service
 @AllArgsConstructor
-public class MedicineServiceImpl implements MedicineService {
+public class DomainMedicineService implements MedicineService {
   private Http http;
   private MedicineRepository medicineRepository;
   @Override
